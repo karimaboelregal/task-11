@@ -1,3 +1,11 @@
+var data = [
+    {"title": "Card title", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis minus ullam eum quia corporis perspiciatis officia quo dolor atque."},
+    {"title": "Card title", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis minus ullam eum quia corporis perspiciatis officia quo dolor atque."},
+    {"title": "Card title", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis minus ullam eum quia corporis perspiciatis officia quo dolor atque."},
+    {"title": "Card title", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis minus ullam eum quia corporis perspiciatis officia quo dolor atque."}
+]
+
+
 window.onload = function() {
 
     var div = document.createElement("div");
@@ -39,8 +47,8 @@ window.onload = function() {
     var row1 = document.createElement("div");
     row1.className = "row pt-3";
     div1.append(row1);
-    for (var i = 0; i < 4; i++) {
-        adddiv(row1, i);
+    for (var i = 0; i < data.length; i++) {
+        adddiv(row1, i, data[i].title, data[i].description);
     }
 
 
@@ -51,18 +59,18 @@ window.onload = function() {
 }
 
 
-function adddiv(row1, i) {
+function adddiv(row1, i, ti, desc) {
     var col1 = document.createElement("div");
     col1.className = "col-md-4 text-light pb-5";
     var card = document.createElement("div");
     card.className = "card px-3 bg-primary";
     var title = document.createElement("h5");
-    title.innerHTML = (i+1)+" card title";
+    title.innerHTML = (i+1) + " " + ti;
     title.className = "pt-4 pb-2";
     var flexrow = document.createElement("div");
     flexrow.className = "d-flex align-items-center";
     var paragraph = document.createElement("p");
-    paragraph.innerHTML = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis minus ullam eum quia corporis perspiciatis officia quo dolor atque.";
+    paragraph.innerHTML = desc
     paragraph.className = "pb-3"
     var button = document.createElement("button");
     button.innerHTML = "delete";
